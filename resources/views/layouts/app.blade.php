@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -33,7 +37,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">한줄메모장</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">상품관리</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('board.list') }}">게시판</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">TodoList</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,9 +87,17 @@
             </div>
         </nav>
 
+        <!-- Scripts -->
+        <script src="/bower_components/jquery/dist/jquery.min.js" ></script>
+        <script src="https://kit.fontawesome.com/2be0908f9b.js" crossorigin="anonymous"></script>
+
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+
+
 </body>
 </html>
